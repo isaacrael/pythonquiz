@@ -38,9 +38,9 @@ while True:
 #    user_answer.strip()
     print(user_answer)
     if user_answer == answer:
-        print("\nCorrect Answer Great Job!\n")
+        print("\nCorrect Answer Great Job!  :>) \n")
     elif user_answer == "quit":
-        print("Thank you for using Python Quiz....Bye For Now")
+        print("Thank you for using Python Quiz....Bye For Now!!")
         break
     else:
         print("Wrong! ... The correct answer is ", answer)
