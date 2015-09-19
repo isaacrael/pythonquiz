@@ -2,6 +2,12 @@
 """
 
 import random
+from colorama import init
+from colorama import Fore, Back, Style
+
+init()
+
+
 
 question_answer = {
 "What characters are used to create an empty python list": "[]",
@@ -29,7 +35,7 @@ question = random.choice(questions)
 #user_answer = input(question)
 #user_answer.strip()
 
-
+print(Fore.RED + 'some red text')
 
 while True:
     question = random.choice(questions)
