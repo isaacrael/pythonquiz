@@ -12,8 +12,9 @@ question_answer = {
 
 "What do modules do": "they extend the functionality of python",
 "What is the name of the python interpreter": "idle",
-"Write the code to display the keys from the following dictionary called phonebook {Gil: 8330785, Bill: 9786543}": "phonebook.keys()",
-
+"Write the code to display the keys from the following dictionary called phonebook {\"Gil\": \"8330785\", \"Bill\": \"9786543\"}": "phonebook.keys()",
+"Create a list from the following data Gil Mark Carlos": "[\"Gil\", \"Mark\", \"Carlos\"]",
+"Create a dictionary from the following data Gil, 8330785 Steve, 2037659": "{\"Gil\": \"8330785\", \"Steve\": \"2037659\"}",
 }
 
 questions = list(question_answer.keys())
@@ -23,7 +24,6 @@ question = random.choice(questions)
 
 #"Create a list from the following data Gil Mark Carlos": "[""Gil"", ""Mark"", ""Carlos""]",
 #"Create a dictionary from the following data": "Gil, 8330785 Steve, 7659876",
-#"Write the code to display the keys from the following dictionary called phonebook {Gil: 8330785, Bill: 9786543}": "phonebook.keys()",
 
 
 #user_answer = input(question)
