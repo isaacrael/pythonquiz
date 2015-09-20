@@ -7,7 +7,7 @@ X Change Set Title text Welcome userName to Python Quiz
 X Make panel size the right size
 X Make Ctrl Text box the right size
 X Move answer text above the second panel
-Research adding an image to top right corner of panel
+X Research adding an image to top right corner of panel
 Research Use of Ctrl Text Box and how to display into it
 
 
@@ -54,12 +54,15 @@ class windowClass(wx.Frame):
         if yesNoAnswer == wx.ID_NO:
             userName = "Loser!"
 
+# Display python image on the GUI
 
-# Sets up the positioning of the text ctrl panel
+        png = wx.Image('python2.png', wx.BITMAP_TYPE_ANY).ConvertToBitmap()
+        wx.StaticBitmap(self, -1, png, (900, 1), (png.GetWidth(), png.GetHeight()))
+
+
+# Sets the positioning of the text ctrl panel
 
         wx.TextCtrl(panel, pos=(450,100), size=(350,100))
-
-
 # Creates Question text and sets foreground and background colors
 
         questionText = wx.StaticText(panel, -1, "Question:", (400,75))
