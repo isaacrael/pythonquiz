@@ -8,11 +8,13 @@ X Make panel size the right size
 X Make Ctrl Text box the right size
 X Move answer text above the second panel
 X Research adding an image to top right corner of panel
-Research Use of Ctrl Text Box and how to display into it
+X Comment out the edit button code
+Add code to display the users score and average / grade
 If text can be read from Ctrl Box then create another Ctrl Box else create a widget that will read text
     input by computer user.
+Research Use of Ctrl Text Box and how to display text into it
+Research Git workflow when developing on two different systems.
 
-Comment out the edit button code
 
 
 
@@ -56,7 +58,8 @@ class windowClass(wx.Frame):
         yesNoAnswer = yesNoBox.ShowModal()
         yesNoBox.Destroy()
 
-
+        if yesNoAnswer == wx.ID_YES:
+            print("What a wonderful day it is (userName)")
 
         if yesNoAnswer == wx.ID_NO:
             userName = "Loser!"
