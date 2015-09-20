@@ -9,11 +9,15 @@ X Make Ctrl Text box the right size
 X Move answer text above the second panel
 X Research adding an image to top right corner of panel
 X Comment out the edit button code
-Add code to display the users score and average / grade
+In Progress Research Use of Ctrl Text Box and how to display text into it
+In Progress Research Git workflow when developing on two different systems.
+X Move answer instruction text up in the panel
+X Create text crtl for answer panel
+X Add motivation text
+
 If text can be read from Ctrl Box then create another Ctrl Box else create a widget that will read text
     input by computer user.
-Research Use of Ctrl Text Box and how to display text into it
-Research Git workflow when developing on two different systems.
+Add code to display the users score and average / grade
 
 
 
@@ -33,6 +37,7 @@ class windowClass(wx.Frame):
 
     def basicGUI(self):
         panel = wx.Panel(self)
+#        panel1 = wx.Panel(self)
         menuBar = wx.MenuBar()
         fileButton = wx.Menu()
 #        editButton = wx.Menu()
@@ -74,21 +79,44 @@ class windowClass(wx.Frame):
 
 
 
-# Sets the positioning of the text ctrl panel
+# Sets the positioning for the text ctrl panels
 
         wx.TextCtrl(panel, pos=(450,100), size=(350,100))
+        wx.TextCtrl(panel, pos=(450,250), size=(350,100))
+
 # Creates Question text and sets foreground and background colors
 
         questionText = wx.StaticText(panel, -1, "Question:", (400,75))
         questionText.SetForegroundColour('Blue')
         questionText.SetBackgroundColour('White')
 
+# Displays question text in the question text control box
+
+        question = {"What information does a dictionary contain?": "Key value pairs."}
+        qText = question.keys()
+        print(qText)
+        for q in qText:
+            questionText = wx.StaticText(panel, -1, str(q), (455,115))
+            questionText.SetForegroundColour('Blue')
+            questionText.SetBackgroundColour('White')
+
+
+
 # Creates Answer text and sets foreground and background colors
 
-        answerText = wx.StaticText(panel, -1, "Type Your Answer In The Text Box Below:", (400,275))
+        answerText = wx.StaticText(panel, -1, "Type Your Answer In The Text Box Below:", (400,225))
         answerText.SetForegroundColour('Blue')
         answerText.SetBackgroundColour('White')
 
+
+# Creates the motivation text displayed below the answer text ctrl box
+
+        motivationText = wx.StaticText(panel, -1, "Correct....Great Job!:", (450,375))
+        motivationText.SetForegroundColour('Green')
+        motivationText.SetBackgroundColour('White')
+
+
+# Creates the title diplayed on the GUI
 
         self.SetTitle("Welcome To Python Quiz " + (userName) + "!")
         self.Show(True)
