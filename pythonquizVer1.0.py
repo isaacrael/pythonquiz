@@ -18,7 +18,7 @@ import wx
 class windowClass(wx.Frame):
 
     def __init__(self, parent):
-        super(windowClass, self).__init__(parent, size=(1200,700))
+        super(windowClass, self).__init__(parent, size=(1400,800))
 
         self.basicGUI()
 
@@ -57,7 +57,11 @@ class windowClass(wx.Frame):
 # Display python image on the GUI
 
         png = wx.Image('python2.png', wx.BITMAP_TYPE_ANY).ConvertToBitmap()
-        wx.StaticBitmap(self, -1, png, (900, 1), (png.GetWidth(), png.GetHeight()))
+        wx.StaticBitmap(self, -1, png, (1065, 1), (png.GetWidth(), png.GetHeight()))
+
+#        png = wx.Image('python3.png', wx.BITMAP_TYPE_ANY).ConvertToBitmap()
+#        wx.StaticBitmap(self, -1, png, (400,500), (png.GetWidth(), png.GetHeight()))
+
 
 
 # Sets the positioning of the text ctrl panel
