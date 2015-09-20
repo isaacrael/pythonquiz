@@ -3,10 +3,11 @@ __author__ = 'grael_000'
 The following program can be used as a template for creating a python GUI for an application
 
 
-Change Set Title text Welcome userName to Python Quiz
-Make panel size the right size
-Make Ctrl Text box the right size
-Move answer text down below second panel
+X Change Set Title text Welcome userName to Python Quiz
+X Make panel size the right size
+X Make Ctrl Text box the right size
+X Move answer text above the second panel
+Research adding an image to top right corner of panel
 Research Use of Ctrl Text Box and how to display into it
 
 
@@ -16,8 +17,8 @@ import wx
 
 class windowClass(wx.Frame):
 
-    def __init__(self, *args, **kwargs):
-        super(windowClass, self).__init__(*args, **kwargs)
+    def __init__(self, parent):
+        super(windowClass, self).__init__(parent, size=(1200,700))
 
         self.basicGUI()
 
@@ -56,23 +57,23 @@ class windowClass(wx.Frame):
 
 # Sets up the positioning of the text ctrl panel
 
-        wx.TextCtrl(panel, pos=(3,100), size=(150,50))
+        wx.TextCtrl(panel, pos=(450,100), size=(350,100))
 
 
-# Creates awesome text and sets foreground and background colors
+# Creates Question text and sets foreground and background colors
 
-        aweText = wx.StaticText(panel, -1, "Question:", (3,3))
-        aweText.SetForegroundColour('#67cddc')
-        aweText.SetBackgroundColour('black')
+        questionText = wx.StaticText(panel, -1, "Question:", (400,75))
+        questionText.SetForegroundColour('Blue')
+        questionText.SetBackgroundColour('White')
 
-# Creates customized awesome text and sets foreground and background colors
+# Creates Answer text and sets foreground and background colors
 
-        rlyaweText = wx.StaticText(panel, -1, "Answer:", (3,30))
-        rlyaweText.SetForegroundColour('blue')
-        rlyaweText.SetBackgroundColour('black')
+        answerText = wx.StaticText(panel, -1, "Type Your Answer In The Text Box Below:", (400,275))
+        answerText.SetForegroundColour('Blue')
+        answerText.SetBackgroundColour('White')
 
 
-        self.SetTitle("Welcome " + (userName) + " ..... to Python Quiz")
+        self.SetTitle("Welcome To Python Quiz " + (userName) + "!")
         self.Show(True)
 
     def Quit(self, e):
