@@ -9,6 +9,13 @@ X Make Ctrl Text box the right size
 X Move answer text above the second panel
 X Research adding an image to top right corner of panel
 Research Use of Ctrl Text Box and how to display into it
+If text can be read from Ctrl Box then create another Ctrl Box else create a widget that will read text
+    input by computer user.
+
+Comment out the edit button code
+
+
+
 
 
 """
@@ -26,12 +33,12 @@ class windowClass(wx.Frame):
         panel = wx.Panel(self)
         menuBar = wx.MenuBar()
         fileButton = wx.Menu()
-        editButton = wx.Menu()
+#        editButton = wx.Menu()
 
         exitItem = fileButton.Append(wx.ID_EXIT, 'Exit', 'status_msg.....')
 
         menuBar.Append(fileButton, 'File')
-        menuBar.Append(editButton, 'Edit')
+#        menuBar.Append(editButton, 'Edit')
 
         self.SetMenuBar(menuBar)
         self.Bind(wx.EVT_MENU, self.Quit, exitItem)
