@@ -18,11 +18,17 @@ X Move answer instruction text up in the panel
 X Create text crtl for answer panel
 X Add motivation text
 
+Add icons to the motivational text line like those find on sell phone
+
 X Change "Your Question" to read "Question:
 
 If text can be read from Ctrl Box then create another Ctrl Box else create a widget that will read text
     input by computer user.
+
 Add code to display the users score and average / grade
+in Text Ctrl Boxes on the top left of the screen
+calculate average score and letter grade
+add ***** 5 stars being and A, 4 stars B etc.....
 
 
 Work on code that will allow you answer ctrl box to recognize when the enter key is pressed.
