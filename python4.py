@@ -52,6 +52,10 @@ class PythonQuiz(wx.Frame):
         self.lblname.SetForegroundColour('Blue')
         self.lblname.SetBackgroundColour('White')
         self.editname = wx.TextCtrl(self.panel, size=(200, -1))
+# Creates the motivation text displayed below the answer text ctrl box
+        self.motivationText = wx.StaticText(self.panel, -1, "Correct....Great Job!")
+        self.motivationText.SetForegroundColour('Green')
+        self.motivationText.SetBackgroundColour('Grey')
 
 # Setup your menu bar
 
@@ -77,13 +81,13 @@ class PythonQuiz(wx.Frame):
         if yesNoAnswer == wx.ID_NO:
             userName = "Loser!"
 
-        # Display python image on the GUI
+# Display python logo image on the GUI
 
         self.png = wx.Image('python2.png', wx.BITMAP_TYPE_ANY).ConvertToBitmap()
         wx.StaticBitmap(self, -1, self.png, (1625, 0), (self.png.GetWidth(), self.png.GetHeight()))
 
 
-        # Set sizer for the frame, so we can change frame size to match widgets
+# Set sizer for the frame, so we can change frame size to match widgets
         self.windowSizer = wx.BoxSizer()
         self.windowSizer.Add(self.panel, 1, wx.ALL | wx.EXPAND)
 
@@ -96,19 +100,21 @@ class PythonQuiz(wx.Frame):
         self.sizer.Add(self.editname, (10, 16))
 #        self.sizer.Add(self.png, (1650, 0))
         self.sizer.Add(self.button, (10, 17), (1, 2), flag=wx.EXPAND)
+        self.sizer.Add(self.motivationText, (11,15))
 
-        # Set simple sizer for a nice border
+
+# Set simple sizer for a nice border
         self.border = wx.BoxSizer()
         self.border.Add(self.sizer, 1, wx.ALL | wx.EXPAND, 5)
 
-        # Use the sizers
+# Use the sizers
         self.panel.SetSizerAndFit(self.border)
         self.SetSizerAndFit(self.windowSizer)
 
-        # Set event handlers
+# Set event handlers
         self.button.Bind(wx.EVT_BUTTON, self.OnButton)
 
-        # Creates the title diplayed on the GUI
+# Creates the title diplayed on the GUI
 
         self.SetTitle("Welcome To Python Quiz " + (userName) + "!")
         self.Show(True)
