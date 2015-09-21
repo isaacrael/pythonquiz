@@ -20,9 +20,13 @@ If text can be read from Ctrl Box then create another Ctrl Box else create a wid
 Add code to display the users score and average / grade
 
 
+Work on code that will allow you answer ctrl box to recognize when the enter key is pressed.
 
+Following 2 lines below represent code that has been tried to eliminate text dissapearance on cursor
+questionText = wx.StaticText(panel, -1, str(q), (455,115), style=wx.TE_READONLY)
+questionText = wx.TextCtrl(panel, -1, str(q), (455,115), style=wx.TE_READONLY)
 
-
+self.answer = wx.TextCtrl(panel, pos=(450,250), size=(350,100))
 
 """
 
@@ -63,8 +67,8 @@ class windowClass(wx.Frame):
         yesNoAnswer = yesNoBox.ShowModal()
         yesNoBox.Destroy()
 
-        if yesNoAnswer == wx.ID_YES:
-            print("What a wonderful day it is (userName)")
+#        if yesNoAnswer == wx.ID_YES:
+#            print("What a wonderful day it is (userName)")
 
         if yesNoAnswer == wx.ID_NO:
             userName = "Loser!"
@@ -81,7 +85,7 @@ class windowClass(wx.Frame):
 
 # Sets the positioning for the text ctrl panels
 
-        wx.TextCtrl(panel, pos=(450,100), size=(350,100))
+#        wx.TextCtrl(panel, pos=(450,100), size=(350,100))
         wx.TextCtrl(panel, pos=(450,250), size=(350,100))
 
 # Creates Question text and sets foreground and background colors
@@ -94,9 +98,8 @@ class windowClass(wx.Frame):
 
         question = {"What information does a dictionary contain?": "Key value pairs."}
         qText = question.keys()
-        print(qText)
         for q in qText:
-            questionText = wx.StaticText(panel, -1, str(q), (455,115))
+            questionText = wx.StaticText(panel, -1,(q), (455,115), style=wx.TE_READONLY)
             questionText.SetForegroundColour('Blue')
             questionText.SetBackgroundColour('White')
 
@@ -108,10 +111,22 @@ class windowClass(wx.Frame):
         answerText.SetForegroundColour('Blue')
         answerText.SetBackgroundColour('White')
 
+# Sets the positioning for the text ctrl panels
+
+
+#        wx.TextCtrl(panel, pos=(450,100), size=(350,100))
+#        wx.TextCtrl(panel, pos=(450,250), size=(350,100))
+
+        def GetAnswer(self):
+            self.answer = wx.TextEntryDialog(panel, "Enter Your Answer", pos=(450,250))
+            userAnswer = self.answer.GetValue()
+            print(userAnswer)
+        GetAnswer(self)
+
 
 # Creates the motivation text displayed below the answer text ctrl box
 
-        motivationText = wx.StaticText(panel, -1, "Correct....Great Job!:", (450,375))
+        motivationText = wx.StaticText(panel, -1, "Correct....Great Job!", (450,375))
         motivationText.SetForegroundColour('Green')
         motivationText.SetBackgroundColour('White')
 
