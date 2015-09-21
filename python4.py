@@ -41,12 +41,17 @@ class PythonQuiz(wx.Frame):
         wx.Frame.__init__(self, parent)
 
         self.panel = wx.Panel(self)
-        self.quote = wx.StaticText(self.panel, label="Question:")
+#        self.quote = wx.StaticText(self.panel, label="Question:")
         self.result = wx.StaticText(self.panel, label="")
+        self.questionText = wx.StaticText(self.panel, -1, "Question:", (500, 250))
+        self.questionText.SetForegroundColour('Blue')
+        self.questionText.SetBackgroundColour('White')
         self.result.SetForegroundColour(wx.RED)
         self.button = wx.Button(self.panel, label="Submit")
-        self.lblname = wx.StaticText(self.panel, label="Your name:")
-        self.editname = wx.TextCtrl(self.panel, size=(140, -1))
+        self.lblname = wx.StaticText(self.panel, label="Type Your Answer \nThen Click Submit:")
+        self.lblname.SetForegroundColour('Blue')
+        self.lblname.SetBackgroundColour('White')
+        self.editname = wx.TextCtrl(self.panel, size=(200, -1))
 
 # Setup your menu bar
 
@@ -83,13 +88,14 @@ class PythonQuiz(wx.Frame):
         self.windowSizer.Add(self.panel, 1, wx.ALL | wx.EXPAND)
 
         # Set sizer for the panel content
-        self.sizer = wx.GridBagSizer(5, 5)
-        self.sizer.Add(self.quote, (0, 0))
+        self.sizer = wx.GridBagSizer(20, 20)
+#        self.sizer.Add(self.quote, (0, 0))
         self.sizer.Add(self.result, (0, 1))
-        self.sizer.Add(self.lblname, (1, 0))
-        self.sizer.Add(self.editname, (1, 1))
+        self.sizer.Add(self.questionText, (7,15))
+        self.sizer.Add(self.lblname, (10, 15))
+        self.sizer.Add(self.editname, (10, 16))
 #        self.sizer.Add(self.png, (1650, 0))
-        self.sizer.Add(self.button, (2, 0), (1, 2), flag=wx.EXPAND)
+        self.sizer.Add(self.button, (10, 17), (1, 2), flag=wx.EXPAND)
 
         # Set simple sizer for a nice border
         self.border = wx.BoxSizer()
