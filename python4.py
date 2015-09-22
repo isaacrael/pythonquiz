@@ -108,6 +108,19 @@ class PythonQuiz(wx.Frame):
         self.sizer.Add(self.button, (10, 17), (1, 2), flag=wx.EXPAND)
         self.sizer.Add(self.motivationText, (11,15))
 
+# Displays question text in the question text control box
+
+        question = {"What information does a dictionary contain?": "Key value pairs."}
+        qText = question.keys()
+        for q in qText:
+            self.qText = wx.StaticText(self.panel, -1,(q), (510,282), style=wx.TE_READONLY)
+            self.qText.SetForegroundColour('Blue')
+            self.qText.SetBackgroundColour('White')
+
+
+
+
+
 
 # Set simple sizer for a nice border
         self.border = wx.BoxSizer()
@@ -127,7 +140,10 @@ class PythonQuiz(wx.Frame):
 
 
     def OnButton(self, e):
+        userResponse = self.editname.GetValue()
+        print(userResponse)
         self.result.SetLabel(self.editname.GetValue())
+        return userResponse
 
     def Quit(self, e):
         self.Close()
