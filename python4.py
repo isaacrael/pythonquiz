@@ -1,9 +1,9 @@
 __author__ = '184766'
 """
+
 The following program can be used as a template for creating a python GUI for an application
 
-
-Add image to GUI
+X Add image to GUI
 X Create Yes / No Answer Box
 X Set title displayed on GUI
 X Change Set Title text Welcome userName to Python Quiz
@@ -17,26 +17,17 @@ In Progress Research Git workflow when developing on two different systems.
 X Move answer instruction text up in the panel
 X Create text crtl for answer panel
 X Add motivation text
-
-Add icons to the motivational text line like those find on sell phone
-
 X Change "Your Question" to read "Question:
 
-If text can be read from Ctrl Box then create another Ctrl Box else create a widget that will read text
-    input by computer user.
-
+Add icons to the motivational text line like those found on cell phones
 Add code to display the users score and average / grade
 in Text Ctrl Boxes on the top left of the screen
 calculate average score and letter grade
 add ***** 5 stars being and A, 4 stars B etc.....
 
-
-Work on code that will allow you answer ctrl box to recognize when the enter key is pressed.
-
 Following 2 lines below represent code that has been tried to eliminate text dissapearance on cursor
 questionText = wx.StaticText(panel, -1, str(q), (455,115), style=wx.TE_READONLY)
 questionText = wx.TextCtrl(panel, -1, str(q), (455,115), style=wx.TE_READONLY)
-
 self.answer = wx.TextCtrl(panel, pos=(450,250), size=(350,100))
 
 """
@@ -45,7 +36,6 @@ import wx
 class PythonQuiz(wx.Frame):
     def __init__(self, parent):
         wx.Frame.__init__(self, parent)
-
         self.panel = wx.Panel(self)
 #        self.quote = wx.StaticText(self.panel, label="Question:")
         self.result = wx.StaticText(self.panel, label="")
@@ -64,7 +54,6 @@ class PythonQuiz(wx.Frame):
         self.motivationText.SetBackgroundColour('Grey')
 
 # Setup your menu bar
-
         menuBar = wx.MenuBar()
         fileButton = wx.Menu()
         exitItem = fileButton.Append(wx.ID_EXIT, 'Exit', 'status_msg.....')
@@ -73,13 +62,11 @@ class PythonQuiz(wx.Frame):
         self.Bind(wx.EVT_MENU, self.Quit, exitItem)
 
 # Setup namebox and get userName response
-
         nameBox = wx.TextEntryDialog(None, 'What is your name?', 'Welcome','name')
         if nameBox.ShowModal()==wx.ID_OK:
             userName = nameBox.GetValue()
 
 # Gets answer to yes / no question
-
         yesNoBox = wx.MessageDialog(None, 'Start Python Quiz?', 'Question',wx.YES_NO)
         yesNoAnswer = yesNoBox.ShowModal()
         yesNoBox.Destroy()
@@ -88,7 +75,6 @@ class PythonQuiz(wx.Frame):
             userName = "Loser!"
 
 # Display python logo image on the GUI
-
         self.png = wx.Image('python2.png', wx.BITMAP_TYPE_ANY).ConvertToBitmap()
         wx.StaticBitmap(self, -1, self.png, (1625, 0), (self.png.GetWidth(), self.png.GetHeight()))
 
@@ -97,7 +83,7 @@ class PythonQuiz(wx.Frame):
         self.windowSizer = wx.BoxSizer()
         self.windowSizer.Add(self.panel, 1, wx.ALL | wx.EXPAND)
 
-        # Set sizer for the panel content
+# Set sizer for the panel content
         self.sizer = wx.GridBagSizer(20, 20)
 #        self.sizer.Add(self.quote, (0, 0))
         self.sizer.Add(self.result, (0, 1))
@@ -109,18 +95,12 @@ class PythonQuiz(wx.Frame):
         self.sizer.Add(self.motivationText, (11,15))
 
 # Displays question text in the question text control box
-
         question = {"What information does a dictionary contain?": "Key value pairs."}
         qText = question.keys()
         for q in qText:
             self.qText = wx.StaticText(self.panel, -1,(q), (510,282), style=wx.TE_READONLY)
             self.qText.SetForegroundColour('Blue')
             self.qText.SetBackgroundColour('White')
-
-
-
-
-
 
 # Set simple sizer for a nice border
         self.border = wx.BoxSizer()
@@ -134,11 +114,10 @@ class PythonQuiz(wx.Frame):
         self.button.Bind(wx.EVT_BUTTON, self.OnButton)
 
 # Creates the title diplayed on the GUI
-
         self.SetTitle("Welcome To Python Quiz " + (userName) + "!")
         self.Show(True)
 
-
+# Function gets the input from the computer user
     def OnButton(self, e):
         userResponse = self.editname.GetValue()
         print(userResponse)
