@@ -33,6 +33,9 @@ self.answer = wx.TextCtrl(panel, pos=(450,250), size=(350,100))
 """
 
 import wx
+import random
+
+
 class PythonQuiz(wx.Frame):
     def __init__(self, parent):
         wx.Frame.__init__(self, parent)
@@ -95,13 +98,31 @@ class PythonQuiz(wx.Frame):
         self.sizer.Add(self.motivationText, (11,15))
 
 # Displays question text in the question text control box
-        def getQuestionAnswerPair():
-            self.question = {"What information does a dictionary contain?": "Key value pairs."}
-            self.qText = self.question.keys()
-            for self.q in self.qText:
-                self.qText = wx.StaticText(self.panel, -1,(self.q), (510,282), style=wx.TE_READONLY)
-                self.qText.SetForegroundColour('Blue')
-                self.qText.SetBackgroundColour('White')
+
+#            questions = list(question_answer.keys())
+#            question = random.choice(questions)
+#            question = random.choice(questions)
+#            answer = question_answer[question]
+#            user_answer = raw_input(question)
+        self.question_answer = {"What information does a dictionary contain?": "key value pairs"}
+        self.questions = list(self.question_answer.keys())
+        self.question = random.choice(self.questions)
+        self.answer = self.question_answer[self.question]
+
+        for self.question in self.questions:
+            self.question = wx.StaticText(self.panel, -1,(self.question), (510,282), style=wx.TE_READONLY)
+            self.question.SetForegroundColour('Blue')
+            self.question.SetBackgroundColour('White')
+            self.userResponse = self.editname.GetValue()
+            print(self.answer)
+            print(self.userResponse)
+            if self.answer == self.userResponse:
+                print("True")
+            else:
+                print("False")
+
+
+
 
 # Set simple sizer for a nice border
         self.border = wx.BoxSizer()
@@ -119,11 +140,11 @@ class PythonQuiz(wx.Frame):
         self.Show(True)
 
 # Function gets the input from the computer user
-    def OnButton(self, e, answer):
-        self.userResponse = self.editname.GetValue()
-        print(self.userResponse)
+    def OnButton(self, e):
         self.result.SetLabel(self.editname.GetValue())
-        return self.userResponse
+        answer2 = self.editname.GetValue()
+        print(answer2)
+
 
     def Quit(self, e):
         self.Close()
