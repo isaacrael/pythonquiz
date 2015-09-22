@@ -54,25 +54,25 @@ class PythonQuiz(wx.Frame):
         self.motivationText.SetBackgroundColour('Grey')
 
 # Setup your menu bar
-        menuBar = wx.MenuBar()
-        fileButton = wx.Menu()
-        exitItem = fileButton.Append(wx.ID_EXIT, 'Exit', 'status_msg.....')
-        menuBar.Append(fileButton, 'File')
-        self.SetMenuBar(menuBar)
-        self.Bind(wx.EVT_MENU, self.Quit, exitItem)
+        self.menuBar = wx.MenuBar()
+        self.fileButton = wx.Menu()
+        self.exitItem = self.fileButton.Append(wx.ID_EXIT, 'Exit', 'status_msg.....')
+        self.menuBar.Append(self.fileButton, 'File')
+        self.SetMenuBar(self.menuBar)
+        self.Bind(wx.EVT_MENU, self.Quit, self.exitItem)
 
 # Setup namebox and get userName response
-        nameBox = wx.TextEntryDialog(None, 'What is your name?', 'Welcome','name')
-        if nameBox.ShowModal()==wx.ID_OK:
-            userName = nameBox.GetValue()
+        self.nameBox = wx.TextEntryDialog(None, 'What is your name?', 'Welcome','name')
+        if self.nameBox.ShowModal()==wx.ID_OK:
+            self.userName = self.nameBox.GetValue()
 
 # Gets answer to yes / no question
-        yesNoBox = wx.MessageDialog(None, 'Start Python Quiz?', 'Question',wx.YES_NO)
-        yesNoAnswer = yesNoBox.ShowModal()
-        yesNoBox.Destroy()
+        self.yesNoBox = wx.MessageDialog(None, 'Start Python Quiz?', 'Question',wx.YES_NO)
+        self.yesNoAnswer = self.yesNoBox.ShowModal()
+        self.yesNoBox.Destroy()
 
-        if yesNoAnswer == wx.ID_NO:
-            userName = "Loser!"
+        if self.yesNoAnswer == wx.ID_NO:
+            self.userName = "Loser!"
 
 # Display python logo image on the GUI
         self.png = wx.Image('python2.png', wx.BITMAP_TYPE_ANY).ConvertToBitmap()
@@ -95,10 +95,10 @@ class PythonQuiz(wx.Frame):
         self.sizer.Add(self.motivationText, (11,15))
 
 # Displays question text in the question text control box
-        question = {"What information does a dictionary contain?": "Key value pairs."}
-        qText = question.keys()
-        for q in qText:
-            self.qText = wx.StaticText(self.panel, -1,(q), (510,282), style=wx.TE_READONLY)
+        self.question = {"What information does a dictionary contain?": "Key value pairs."}
+        self.qText = self.question.keys()
+        for self.q in self.qText:
+            self.qText = wx.StaticText(self.panel, -1,(self.q), (510,282), style=wx.TE_READONLY)
             self.qText.SetForegroundColour('Blue')
             self.qText.SetBackgroundColour('White')
 
@@ -114,15 +114,15 @@ class PythonQuiz(wx.Frame):
         self.button.Bind(wx.EVT_BUTTON, self.OnButton)
 
 # Creates the title diplayed on the GUI
-        self.SetTitle("Welcome To Python Quiz " + (userName) + "!")
+        self.SetTitle("Welcome To Python Quiz " + (self.userName) + "!")
         self.Show(True)
 
 # Function gets the input from the computer user
     def OnButton(self, e):
-        userResponse = self.editname.GetValue()
-        print(userResponse)
+        self.userResponse = self.editname.GetValue()
+        print(self.userResponse)
         self.result.SetLabel(self.editname.GetValue())
-        return userResponse
+        return self.userResponse
 
     def Quit(self, e):
         self.Close()
