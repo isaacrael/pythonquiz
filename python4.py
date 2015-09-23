@@ -42,6 +42,8 @@ class PythonQuiz(wx.Frame):
         self.panel = wx.Panel(self)
 #        self.quote = wx.StaticText(self.panel, label="Question:")
         self.result = wx.StaticText(self.panel, label="")
+#        self.labelAnswer = self.result = wx.StaticText(self.panel, label="")
+#        print(self.labelAnswer)
         self.questionText = wx.StaticText(self.panel, -1, "Question:", (500, 250))
         self.questionText.SetForegroundColour('Blue')
         self.questionText.SetBackgroundColour('White')
@@ -104,6 +106,7 @@ class PythonQuiz(wx.Frame):
 #            question = random.choice(questions)
 #            answer = question_answer[question]
 #            user_answer = raw_input(question)
+
         self.question_answer = {"What information does a dictionary contain?": "key value pairs"}
         self.questions = list(self.question_answer.keys())
         self.question = random.choice(self.questions)
@@ -140,10 +143,23 @@ class PythonQuiz(wx.Frame):
         self.Show(True)
 
 # Function gets the input from the computer user
-    def OnButton(self, e):
+    def OnButton(self, e,):
         self.result.SetLabel(self.editname.GetValue())
-        answer2 = self.editname.GetValue()
-        print(answer2)
+        self.userResponse = self.editname.GetValue()
+        if self.answer == self.userResponse:
+            print("True")
+            # Creates the motivation text displayed below the answer text ctrl box
+            self.motivationText = wx.StaticText(self.panel, "Correct....Great Job!")
+            self.motivationText.SetForegroundColour('Green')
+            self.motivationText.SetBackgroundColour('Grey')
+        else:
+            print("False")
+            self.motivationText = wx.StaticText(self.panel, -5, "Wrong Answer! The correct answer is")
+            self.motivationText.SetForegroundColour('Green')
+            self.motivationText.SetBackgroundColour('Grey')
+            self.sizer.Add(self.motivationText, (5,5))
+
+
 
 
     def Quit(self, e):
