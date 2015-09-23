@@ -74,6 +74,9 @@ class PythonQuiz(wx.Frame):
         self.yesNoAnswer = self.yesNoBox.ShowModal()
         self.yesNoBox.Destroy()
 
+#       if self.yesNoAnswer == x.ID_YES:
+#           GetQuestion(self)
+
         if self.yesNoAnswer == wx.ID_NO:
             self.userName = "Loser!"
 
@@ -104,24 +107,19 @@ class PythonQuiz(wx.Frame):
 #            question = random.choice(questions)
 #            answer = question_answer[question]
 #            user_answer = raw_input(question)
-        self.question_answer = {"What information does a dictionary contain?": "key value pairs"}
-        self.questions = list(self.question_answer.keys())
-        self.question = random.choice(self.questions)
-        self.answer = self.question_answer[self.question]
-
-        for self.question in self.questions:
-            self.question = wx.StaticText(self.panel, -1,(self.question), (510,282), style=wx.TE_READONLY)
-            self.question.SetForegroundColour('Blue')
-            self.question.SetBackgroundColour('White')
-            self.userResponse = self.editname.GetValue()
-            print(self.answer)
-            print(self.userResponse)
-            if self.answer == self.userResponse:
-                print("True")
-            else:
-                print("False")
 
 
+
+# Gets answer to yes / no question
+        self.yesNoBox = wx.MessageDialog(None, 'Start Python Quiz?', 'Question',wx.YES_NO)
+        self.yesNoAnswer = self.yesNoBox.ShowModal()
+        self.yesNoBox.Destroy()
+
+ #       if self.yesNoAnswer == wx.ID_NO:
+ #           getQuestion( )
+
+        if self.yesNoAnswer == wx.ID_NO:
+            self.userName = "Loser!"
 
 
 # Set simple sizer for a nice border
@@ -138,6 +136,30 @@ class PythonQuiz(wx.Frame):
 # Creates the title diplayed on the GUI
         self.SetTitle("Welcome To Python Quiz " + (self.userName) + "!")
         self.Show(True)
+
+
+    def GetQuestion(self, e)
+        self.question_answer = {"What information does a dictionary contain?": "key value pairs", "What year was Python developed?": "2004"}
+        self.questions = list(self.question_answer.keys())
+        self.question = random.choice(self.questions)
+        answer = self.question_answer[self.question]
+
+        for self.question in self.questions:
+            self.question = wx.StaticText(self.panel, -1,(self.question), (510,282), style=wx.TE_READONLY)
+            self.question.SetForegroundColour('Blue')
+            self.question.SetBackgroundColour('White')
+            self.userResponse = self.editname.GetValue()
+            print(self.answer)
+            print(self.userResponse)
+            if self.answer == self.userResponse:
+                print("True")
+            elif self.userResponse == "quit":
+                print("Thank you for using Python Quiz....Bye For Now!!")
+                break
+            else:
+                print("False")
+    GetQuestion(self, e)
+
 
 # Function gets the input from the computer user
     def OnButton(self, e):
@@ -156,8 +178,11 @@ class PythonQuiz(wx.Frame):
             self.motivationText.SetBackgroundColour('Grey')
             self.sizer.Add(self.motivationText, (5,5))
 
+
+
     def Quit(self, e):
         self.Close()
+
 
 app = wx.App(False)
 frame = PythonQuiz(None)
