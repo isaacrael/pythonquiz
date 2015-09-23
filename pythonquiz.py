@@ -28,6 +28,11 @@ question_answer = {
 "Call the following function def GetAnswer(value):": "GetAnswer(value)",
 "What is the import statement used for?": "import modules so they can be used in current program",
 "Import the following module called brompton": "import brompton",
+"Name 3 statements that conditionally execute a block of code": "if else elif",
+"What does the class statement do?": "attaches it's local namespace to a class and executes a block of code for use in object oriented programming",
+"Name 3 statements that work together to raise, catch, and clean up code from exceptions": "try except finally",
+"Name 2 programs that can be used to install python programs": "easy_install and pip",
+
 }
 
 questions = list(question_answer.keys())
