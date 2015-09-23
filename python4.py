@@ -142,9 +142,19 @@ class PythonQuiz(wx.Frame):
 # Function gets the input from the computer user
     def OnButton(self, e):
         self.result.SetLabel(self.editname.GetValue())
-        answer2 = self.editname.GetValue()
-        print(answer2)
-
+        self.userResponse = self.editname.GetValue()
+        if self.answer == self.userResponse:
+            print("True")
+            # Creates the motivation text displayed below the answer text ctrl box
+            self.motivationText = wx.StaticText(self.panel, -1, "Correct....Great Job!")
+            self.motivationText.SetForegroundColour('Green')
+            self.motivationText.SetBackgroundColour('Grey')
+        else:
+            print("False")
+            self.motivationText = wx.StaticText(self.panel, -1, "Wrong Answer! The correct answer is")
+            self.motivationText.SetForegroundColour('Green')
+            self.motivationText.SetBackgroundColour('Grey')
+            self.sizer.Add(self.motivationText, (5,5))
 
     def Quit(self, e):
         self.Close()
