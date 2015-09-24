@@ -40,7 +40,10 @@ question_answer = {
 "How is BeautifulSoup4 installed using easy_install from the command line?": "easy_install BeautifulSoup4",
 "Can python be used for object oriented programming (yes or no)?": "yes",
 "What two ways can comments be specified in a python program?": "# or beginning and ending triple quotes",
-"Name 2 popular cross platform python GUI frameworks?": "wxPython and PyQT",
+"Name 2 popular cross platform (Windows, Linux, Mac OSX) python GUI frameworks?": "wxPython and PyQT",
+"What is python?": "modern interpreted programming language with objects, modules, threads, exceptions, and automatic memory management",
+"What is a negative index in python": "pythons arrays and lists can be accessed with positive and negative indexes",
+"Name 2 ways to make python scripts executable?": "open in IDE and run or python scriptname.py",
 
 }
 

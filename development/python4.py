@@ -78,7 +78,7 @@ class PythonQuiz(wx.Frame):
             self.userName = "Loser!"
 
 # Display python logo image on the GUI
-        self.png = wx.Image('python2.png', wx.BITMAP_TYPE_ANY).ConvertToBitmap()
+        self.png = wx.Image('../images/python2.png', wx.BITMAP_TYPE_ANY).ConvertToBitmap()
         wx.StaticBitmap(self, -1, self.png, (1625, 0), (self.png.GetWidth(), self.png.GetHeight()))
 
 
