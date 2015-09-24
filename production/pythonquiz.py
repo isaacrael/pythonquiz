@@ -34,6 +34,13 @@ question_answer = {
 "Name 2 programs that can be used to install python programs": "easy_install and pip",
 "Write the code to open countries.txt in read mode and assign to variable file": "file = open(\"countries.txt\", \"r\")",
 "Write the code to open countries.txt in write mode and assign to variable file": "file = open(\"countries.txt\"), \"w\")",
+"How is BeautifulSoup4 installed from the command line using pip?": "pip install BeautifulSoup4",
+"Write the line of code to close the following file opened like this f = open(\"states.txt\", \"w\")": "f.close()",
+"Name 3 types of applications that can be written with python": "web games scripts",
+"How is BeautifulSoup4 installed using easy_install from the command line?": "easy_install BeautifulSoup4",
+"Can python be used for object oriented programming (yes or no)?": "yes",
+"What two ways can comments be specified in a python program?": "# or beginning and ending triple quotes",
+"Name 2 popular cross platform python GUI frameworks?": "wxPython and PyQT",
 
 }
 
