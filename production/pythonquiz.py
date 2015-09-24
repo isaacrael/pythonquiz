@@ -3,10 +3,10 @@ __author__ = '184766'
 """
 
 import random
-from colorama import init
-from colorama import Fore, Back
+#from colorama import init
+#from colorama import Fore, Back
 
-init()
+#init()
 
 
 
