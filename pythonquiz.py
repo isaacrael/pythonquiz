@@ -55,7 +55,7 @@ while True:
     question = random.choice(questions)
     answer = question_answer[question]
     user_answer = raw_input(question)
-# Creates a random number a different motivationalText message is displayed when a correct answer is given
+# Creates a random number so that a different motivationalText message is displayed when a correct answer is given
     for x in range(1):
         value = random.randint(1,5)
 #        print(value)
