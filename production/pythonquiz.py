@@ -32,6 +32,8 @@ question_answer = {
 "What does the class statement do?": "attaches it's local namespace to a class and executes a block of code",
 "Name 3 statements that work together to raise, catch, and clean up code from exceptions": "try except finally",
 "Name 2 programs that can be used to install python programs": "easy_install and pip",
+"Write the code to open countries.txt in read mode and assign to variable file": "file = open(\"countries.txt\", \"r\")",
+"Write the code to open countries.txt in write mode and assign to variable file": "file = open(\"countries.txt\"), \"w\")",
 
 }
 
