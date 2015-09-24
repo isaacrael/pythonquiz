@@ -3,10 +3,10 @@ __author__ = '184766'
 """
 
 import random
-#from colorama import init
-#from colorama import Fore, Back
+from colorama import init
+from colorama import Fore, Back
 
-#init()
+init()
 
 
 
@@ -24,36 +24,47 @@ question_answer = {
 "Who created python?": "Guido van Rossum",
 "What year was python conceived?": "1989",
 "Name 2 types of loops used in python": "for and while loops",
-"Define the following function call GetAnswer": "def GetAnswer():",
+"Define the following function GetAnswer": "def GetAnswer():",
 "Call the following function def GetAnswer(value):": "GetAnswer(value)",
 "What is the import statement used for?": "import modules so they can be used in current program",
 "Import the following module called brompton": "import brompton",
 "Name 3 statements that conditionally execute a block of code": "if else elif",
-"What does the class statement do?": "attaches it's local namespace to a class and executes a block of code for use in object oriented programming",
+"What does the class statement do?": "attaches it's local namespace to a class and executes a block of code",
 "Name 3 statements that work together to raise, catch, and clean up code from exceptions": "try except finally",
 "Name 2 programs that can be used to install python programs": "easy_install and pip",
 
 }
 
 questions = list(question_answer.keys())
-# print(questions)
 question = random.choice(questions)
 
-#user_answer = input(question)
-#user_answer.strip()
 #print(Fore.RED + 'some red text')
+
+name = raw_input("Please enter your name")
+print"\n******************************************** Welcome to Python Quiz",(name) + " ***************************"
+print("\n")
+
+
+motivationalText = ["Awesome Keep It Up!", "Great Job!!!", "Yeah Buddy :>)", "Just Do It!", "Your Kickin Ass Dude!",
+                    "Don't Get Mad Get Even!", "Teach These Monkey's A Lesson", "I'm Coming For You Beeacchhes!",
+                    "A Fire Has Been Lit That Will Never Be Extinguished!"]
+
+
 
 while True:
     question = random.choice(questions)
     answer = question_answer[question]
     user_answer = raw_input(question)
-#    str(user_answer)
-#    user_answer.strip()
-#    print(user_answer)
+# Creates a random number a different motivationalText message is displayed when a correct answer is given
+    for x in range(1):
+        value = random.randint(1,5)
+#        print(value)
     if user_answer == answer:
-        print("\nCorrect Answer Great Job!  :>) \n")
+        print("\n")
+        print(motivationalText[value])
+        print("\n")
     elif user_answer == "quit":
-        print("Thank you for using Python Quiz....Bye For Now!!")
+        print"\n********************************** Thank you for using Python Quiz", (name) + " *******************Bye For Now!!"
         break
     else:
         print("Wrong! ... The correct answer is ", answer)
