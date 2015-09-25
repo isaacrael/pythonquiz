@@ -52,6 +52,8 @@ question_answer = {
 "How is a virtual environment requirements.txt file created?": "pip freeze > requirements.txt",
 "How can information on an installed package called Sphinx be shown?": "pip show Sphinx",
 "What is the name of the debugger that can be used to debug python programs?": "pdb",
+"How is a virtual environment created in Python 3?": "pyenv myproject",
+"Once a new virtual environment is created how is an old virtual environment reproduced?": "pip install -r path to old requirements.txt",
 
 }
 
