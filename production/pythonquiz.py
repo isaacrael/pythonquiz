@@ -43,7 +43,7 @@ question_answer = {
 "Name 2 popular cross platform (Windows, Linux, Mac OSX) python GUI frameworks?": "wxPython and PyQT",
 "What is python?": "modern interpreted programming language with objects, modules, threads, exceptions, and automatic memory management",
 "What is a negative index in python": "pythons arrays and lists can be accessed with positive and negative indexes",
-"Name 2 ways to make python scripts executable?": "open in IDE and run or python scriptname.py",
+"Name 2 ways to execute python scripts?": "open in IDE and run or python scriptname.py",
 "What does a Unit Test test?": "Tests a programs functionality in isolation",
 "What do integration tests test?": "They test that a programs modules work together",
 "What application needs to be installed in Python 2.7 in order to be able to create a virtual environment?": "virtualenvwrapper",
@@ -51,7 +51,8 @@ question_answer = {
 "How is a virutal environment deactivated?": "source /bin/deactivate",
 "How is a virtual environment requirements.txt file created?": "pip freeze > requirements.txt",
 "How can information on an installed package called Sphinx be shown?": "pip show Sphinx",
-"What is the name of the debugger that can be used to debug python programgs?": "pdb",
+"What is the name of the debugger that can be used to debug python programs?": "pdb",
+
 }
 
 questions = list(question_answer.keys())
