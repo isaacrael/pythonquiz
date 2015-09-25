@@ -51,7 +51,7 @@ question_answer = {
 "How is a virutal environment deactivated?": "source /bin/deactivate",
 "How is a virtual environment requirements.txt file created?": "pip freeze > requirements.txt",
 "How can information on an installed package called Sphinx be shown?": "pip show Sphinx",
-
+"What is the name of the debugger that can be used to debug python programgs?": "pdb",
 }
 
 questions = list(question_answer.keys())
