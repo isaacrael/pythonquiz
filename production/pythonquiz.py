@@ -44,6 +44,9 @@ question_answer = {
 "What is python?": "modern interpreted programming language with objects, modules, threads, exceptions, and automatic memory management",
 "What is a negative index in python": "pythons arrays and lists can be accessed with positive and negative indexes",
 "Name 2 ways to make python scripts executable?": "open in IDE and run or python scriptname.py",
+"What does a Unit Test test?": "Tests a programs functionality in isolation",
+"What do integration tests test?": "They test that a programs modules work together",
+
 
 }
 
