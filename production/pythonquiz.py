@@ -54,6 +54,11 @@ question_answer = {
 "What is the name of the debugger that can be used to debug python programs?": "pdb",
 "How is a virtual environment created in Python 3?": "pyenv myproject",
 "Once a new virtual environment is created how is an old virtual environment reproduced?": "pip install -r path to old requirements.txt",
+"When was object oriented programming developed?": "1960's",
+"What two programming languages was OOP originally used for?": "Simula67 and smalltalk",
+"What is object oriented programming?": "paradigm for code organization and design",
+"Describe the object oriented programming paradigm?": "organizes data into objects and functionality into methods defines these specs into classes",
+"What does object oriented programming promote?": "collaboration, codes extension, maintenance"
 
 }
 
