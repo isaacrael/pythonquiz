@@ -46,7 +46,11 @@ question_answer = {
 "Name 2 ways to make python scripts executable?": "open in IDE and run or python scriptname.py",
 "What does a Unit Test test?": "Tests a programs functionality in isolation",
 "What do integration tests test?": "They test that a programs modules work together",
-
+"What application needs to be installed in Python 2.7 in order to be able to create a virtual environment?": "virtualenvwrapper",
+"How is a virtual environment activated?": "source /bin/activate",
+"How is a virutal environment deactivated?": "source /bin/deactivate",
+"How is a virtual environment requirements.txt file created?": "pip freeze > requirements.txt",
+"How can information on an installed package called Sphinx be shown?": "pip show Sphinx",
 
 }
 
