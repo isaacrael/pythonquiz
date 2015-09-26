@@ -55,5 +55,11 @@ question_answer = {
 "What is an object?": "unit of data having one or more attributes, of a particular class or type, with associated functionality (methods)",
 "Everything in python is an?": "object",
 "Python modules can be?": "executed and imported",
+"What is a class?": "a blueprint for an instance",
+"What is an instance?": "a constructed object of the class",
+"What is a type?": "indicates the class the instance belongs to",
+"What is an attribute?": "any object value object.attribute",
+"What is a method?": "a callable attribute defined in the class",
+
 
 }
