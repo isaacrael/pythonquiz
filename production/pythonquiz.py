@@ -58,7 +58,11 @@ question_answer = {
 "What two programming languages was OOP originally used for?": "Simula67 and smalltalk",
 "What is object oriented programming?": "paradigm for code organization and design",
 "Describe the object oriented programming paradigm?": "organizes data into objects and functionality into methods defines these specs into classes",
-"What does object oriented programming promote?": "collaboration, codes extension, maintenance"
+"What does object oriented programming promote?": "collaboration, code extension, maintenance",
+"What are the three pillars of OOP": "encapsulation, polymorphism, inheritance",
+"What is an object?": "unit of data having one or more attributes, of a particular class or type, with associated functionality (methods)",
+"Everything in python is an?": "object",
+"Python modules can be?": "executed and imported",
 
 }
 
