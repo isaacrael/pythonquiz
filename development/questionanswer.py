@@ -37,7 +37,7 @@ question_answer = {
 "What is a negative index in python": "pythons arrays and lists can be accessed with positive and negative indexes",
 "Name 2 ways to execute python scripts?": "open IDE and run or python scriptname.py",
 "What does a Unit Test test?": "tests a programs functionality in isolation",
-"What do integration tests test?": "They test that a programs modules work together",
+"What do integration tests test?": "they test that a programs modules work together",
 "What application needs to be installed in Python 2.7 in order to be able to create a virtual environment?": "virtualenvwrapper",
 "How is a virtual environment activated?": "source /bin/activate",
 "How is a virutal environment deactivated?": "source /bin/deactivate",
@@ -61,8 +61,12 @@ question_answer = {
 "What is an attribute?": "any object value object.attribute",
 "What is a method?": "a callable attribute defined in the class",
 "What is self?": "self is the instance or method on which the object was called",
-"What is encapsulation?": "ensures integrity of the data by using setter and gettern methods",
+"What is encapsulation?": "ensures integrity of the data by using setter and getter methods",
 "What is __init__": "constructor",
 "Describe the __init__constructor": "automatically called, offers opportunity to initialize attributes at time of construction",
+"What is a class attribute?": "an attribute that is set in the class",
+"What is an instance attribute?": "an attribute that is set in the attribute",
+"What is the look up order for class and instance attributes?": "first in the instance then the class",
+"Are attributes / variables in the class accessible via the instance (yes or no)?": "yes",
 
 }
