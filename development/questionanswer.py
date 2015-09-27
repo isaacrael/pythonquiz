@@ -60,6 +60,9 @@ question_answer = {
 "What is a type?": "indicates the class the instance belongs to",
 "What is an attribute?": "any object value object.attribute",
 "What is a method?": "a callable attribute defined in the class",
-
+"What is self?": "self is the instance or method on which the object was called",
+"What is encapsulation?": "ensures integrity of the data by using setter and gettern methods",
+"What is __init__": "constructor",
+"Describe the __init__constructor": "automatically called, offers opportunity to initialize attributes at time of construction",
 
 }
