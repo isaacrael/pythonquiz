@@ -51,7 +51,7 @@ question_answer = {
 "What is object oriented programming?": "paradigm for code organization and design",
 "Describe the object oriented programming paradigm?": "organizes data into objects and functionality into methods defines these specs into classes",
 "What does object oriented programming promote?": "collaboration, code extension, maintenance",
-"What are the three pillars of OOP": "encapsulation, polymorphism, inheritance",
+"What are the three pillars of OOP": "encapsulation, inheritance, polymorphism",
 "What is an object?": "unit of data having one or more attributes, of a particular class or type, with associated functionality (methods)",
 "Everything in python is an?": "object",
 "Python modules can be?": "executed and imported",
@@ -68,5 +68,8 @@ question_answer = {
 "What is an instance attribute?": "an attribute that is set in the attribute",
 "What is the look up order for class and instance attributes?": "first in the instance then the class",
 "Are attributes / variables in the class accessible via the instance (yes or no)?": "yes",
+"What is polymorphism?": "many shapes, two classes with same interface method name, methods are often different but conceptually similar",
+"By default does python use depth first or breadth first search in multiple inheritance?": "depth",
+"What does python do when two classes inherit from the same class?": "Python eliminates the first mention of the class from the mro",
 
 }
