@@ -37,7 +37,7 @@ import random
 
 
 class PythonQuiz(wx.Frame):
-    def __init__(self, parent):
+    def __init__(self, parent):             # constructor initializes attributes at time of construction
         wx.Frame.__init__(self, parent)
         self.panel = wx.Panel(self)
 #        self.quote = wx.StaticText(self.panel, label="Question:")
@@ -104,6 +104,8 @@ class PythonQuiz(wx.Frame):
 #            question = random.choice(questions)
 #            answer = question_answer[question]
 #            user_answer = raw_input(question)
+
+
         self.question_answer = {"What information does a dictionary contain?": "key value pairs"}
         self.questions = list(self.question_answer.keys())
         self.question = random.choice(self.questions)
@@ -123,7 +125,6 @@ class PythonQuiz(wx.Frame):
 
 
 
-
 # Set simple sizer for a nice border
         self.border = wx.BoxSizer()
         self.border.Add(self.sizer, 1, wx.ALL | wx.EXPAND, 5)
@@ -138,6 +139,7 @@ class PythonQuiz(wx.Frame):
 # Creates the title diplayed on the GUI
         self.SetTitle("Welcome To Python Quiz " + (self.userName) + "!")
         self.Show(True)
+
 
 # Function gets the input from the computer user
     def OnButton(self, e):
@@ -158,6 +160,8 @@ class PythonQuiz(wx.Frame):
 
     def Quit(self, e):
         self.Close()
+
+
 
 app = wx.App(False)
 frame = PythonQuiz(None)
