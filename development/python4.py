@@ -34,6 +34,7 @@ self.answer = wx.TextCtrl(panel, pos=(450,250), size=(350,100))
 
 import wx
 import random
+import time
 
 
 class PythonQuiz(wx.Frame):
@@ -47,6 +48,7 @@ class PythonQuiz(wx.Frame):
         self.questionText.SetBackgroundColour('White')
         self.result.SetForegroundColour(wx.RED)
         self.button = wx.Button(self.panel, label="Submit")
+        self.button2 = wx.Button(self.panel, label="Next Question")
         self.lblname = wx.StaticText(self.panel, label="Type Your Answer \nThen Click Submit:")
         self.lblname.SetForegroundColour('Blue')
         self.lblname.SetBackgroundColour('White')
@@ -78,8 +80,8 @@ class PythonQuiz(wx.Frame):
             self.userName = "Loser!"
 
 # Display python logo image on the GUI
-        self.png = wx.Image('../images/python2.png', wx.BITMAP_TYPE_ANY).ConvertToBitmap()
-        wx.StaticBitmap(self, -1, self.png, (1625, 0), (self.png.GetWidth(), self.png.GetHeight()))
+        self.png = wx.Image('images/python2.png', wx.BITMAP_TYPE_ANY).ConvertToBitmap()
+        wx.StaticBitmap(self, -1, self.png, (1100, 0), (self.png.GetWidth(), self.png.GetHeight()))
 
 
 # Set sizer for the frame, so we can change frame size to match widgets
@@ -95,6 +97,7 @@ class PythonQuiz(wx.Frame):
         self.sizer.Add(self.editname, (10, 16))
 #        self.sizer.Add(self.png, (1650, 0))
         self.sizer.Add(self.button, (10, 17), (1, 2), flag=wx.EXPAND)
+        self.sizer.Add(self.button2, (11, 17), (1, 2), flag=wx.EXPAND)
         self.sizer.Add(self.motivationText, (11,15))
 
 # Displays question text in the question text control box
@@ -106,13 +109,15 @@ class PythonQuiz(wx.Frame):
 #            user_answer = raw_input(question)
 
 
+
+
         self.question_answer = {"What information does a dictionary contain?": "key value pairs"}
         self.questions = list(self.question_answer.keys())
         self.question = random.choice(self.questions)
         self.answer = self.question_answer[self.question]
 
         for self.question in self.questions:
-            self.question = wx.StaticText(self.panel, -1,(self.question), (510,282), style=wx.TE_READONLY)
+            self.question = wx.StaticText(self.panel, -1,(self.question), (510,282), style=wx.TE_LEFT)
             self.question.SetForegroundColour('Blue')
             self.question.SetBackgroundColour('White')
             self.userResponse = self.editname.GetValue()
@@ -135,10 +140,37 @@ class PythonQuiz(wx.Frame):
 
 # Set event handlers
         self.button.Bind(wx.EVT_BUTTON, self.OnButton)
+        self.button2.Bind(wx.EVT_BUTTON, self.NextQuestion)
 
 # Creates the title diplayed on the GUI
         self.SetTitle("Welcome To Python Quiz " + (self.userName) + "!")
         self.Show(True)
+
+
+    def NextQuestion(self, e):
+        print("The NextQuestion Button Works!")
+        self.question_answer = {"What is the look up order for class and instance attributes?": "first in the instance then the class",
+                                "What information does a dictionary contain?": "key value pairs"}
+        self.questions = list(self.question_answer.keys())
+        self.question = random.choice(self.questions)
+        self.answer = self.question_answer[self.question]
+
+        for self.question in self.questions:
+            self.question = wx.StaticText(self.panel, -1,(self.question), (510,282), style=wx.TE_LEFT)
+            time.sleep(3)
+            clear_field = "                                                                         "
+            self.question.SetLabel(clear_field)
+            self.question.SetForegroundColour('Blue')
+            self.question.SetBackgroundColour('White')
+            self.userResponse = self.editname.GetValue()
+            print(self.answer)
+            print(self.userResponse)
+            if self.answer == self.userResponse:
+                print("True")
+            else:
+                print("False")
+
+
 
 
 # Function gets the input from the computer user
